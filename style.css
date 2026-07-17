@@ -1,0 +1,425 @@
+/* Remove browser default spacing */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+/* Center everything */
+
+body{
+
+    /* display:flex;
+
+    justify-content:center;
+
+    align-items:center; */
+
+    height:100vh;
+
+    background:#1e1e1e;
+    padding: 30px;
+
+    color: azure;
+
+}
+
+
+/* Paragraph container */
+
+#paragraph{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    font-size:34px;
+    line-height:60px;
+    word-wrap:break-word;
+}
+
+
+/* Hide input */
+
+#typingInput{
+
+    position:absolute;
+
+    opacity:0;
+
+}
+.correct{
+    color:  hsl(140, 63%, 57%);
+}
+.wrong{
+    color: hsl(354, 63%, 57%);
+    border-bottom: 4px solid hsl(354, 63%, 57%);
+}
+/* cursor */
+#cursor{
+
+    display: none;
+    position:absolute;
+
+    width:4px;
+
+    height:40px;
+
+    background:yellow;
+}
+/* making cursor blinking */
+@keyframes blink{
+    50%{
+
+        opacity:0;
+    }
+}
+#cursor{
+    animation:blink .8s infinite;
+}
+/* start button  */
+.start-btn{
+    background-color: greenyellow;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+hr{
+    margin:20px 0;
+}
+.start-btn:hover{
+    background-color: green;;
+}
+#timer{
+    color: yellow;
+}
+#accuracy{
+    color: hsl(354, 63%, 57%);
+}
+.blur{
+    filter: blur(4px);
+    opacity: 0.99;
+    transition: .2s;
+}
+
+.blur:hover{
+    cursor:pointer;
+}
+
+/* ---------------- Header ---------------- */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.title h1{
+
+    font-size:34px;
+
+    color:white;
+
+}
+
+.title p{
+
+    color:#888;
+
+    margin-top:6px;
+
+}
+
+.best-score{
+
+    font-size:22px;
+
+    color:#ffd54f;
+
+}
+
+/* ---------------- Toolbar ---------------- */
+
+.toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    margin:25px 0;
+
+}
+
+/* -------- Stats -------- */
+
+.stats{
+
+    display:flex;
+
+    gap:50px;
+
+}
+
+.stats div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.stat-title{
+
+    color:#999;
+
+    font-size:22px;
+
+}
+
+#wpm{
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+}
+
+#accuracy{
+
+    color:#ff5c73;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+}
+
+#timer{
+
+    color:#ffd54f;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+}
+
+/* -------- Options -------- */
+
+.options{
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:center;
+
+}
+
+.options label{
+
+    margin-left:10px;
+
+    cursor:pointer;
+
+}
+
+.options strong{
+
+    color:#bbb;
+
+}
+/* footer  */
+.attribution{
+    width: 100%;
+    margin-top: 70px;
+    padding: 18px 20px;
+
+    text-align: center;
+
+    background: #1f2937;
+    color: #f3f4f6;
+
+    border-top: 1px solid #374151;
+
+    box-sizing: border-box;
+}
+
+.attribution p{
+    margin: 0;
+    font-size: 14px;
+}
+
+.attribution a{
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.attribution a:hover{
+    text-decoration: underline;
+}
+
+.attribution span{
+    margin: 0 10px;
+    color: #9ca3af;
+}
+
+.attribution strong{
+    color: #ffffff;
+}
+/* responsive layout  */
+/* ================= Responsive ================= */
+
+@media (max-width: 992px){
+
+    body{
+        padding:25px;
+    }
+
+    .toolbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:25px;
+    }
+
+    .options{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .stats{
+        gap:30px;
+        flex-wrap:wrap;
+    }
+
+    #paragraph{
+        font-size:28px;
+        line-height:48px;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    body{
+        padding:20px;
+    }
+
+    .header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .stats{
+        width:100%;
+        justify-content:space-between;
+        gap:20px;
+    }
+
+    .options{
+        width:100%;
+    }
+
+    .title h1{
+        font-size:28px;
+    }
+
+    .title p{
+        font-size:15px;
+    }
+
+    .best-score{
+        font-size:20px;
+    }
+
+    .stat-title{
+        font-size:18px;
+    }
+
+    #wpm,
+    #accuracy,
+    #timer{
+        font-size:28px;
+    }
+
+    #paragraph{
+        font-size:24px;
+        line-height:42px;
+    }
+
+    .start-btn{
+        width:100%;
+        position:static;
+        transform:none;
+        margin-top:20px;
+        font-size:18px;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    body{
+        padding:15px;
+    }
+
+    .title h1{
+        font-size:24px;
+    }
+
+    .best-score{
+        font-size:18px;
+    }
+
+    .stats{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .options{
+        gap:15px;
+    }
+
+    .difficulty,
+    .mode{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    #paragraph{
+        font-size:20px;
+        line-height:36px;
+    }
+
+    .attribution{
+        padding:15px;
+    }
+
+    .attribution p{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+}

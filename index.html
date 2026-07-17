@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frontend Mentor | Typing Speed Test</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="header">
+
+    <div class="title">
+
+        <h1>⌨️ Typing Practice</h1>
+
+        <p>Improve your typing speed and accuracy</p>
+
+    </div>
+
+    <div class="best-score">
+
+        🏆 Best :
+        <span id="best-score">0</span>
+        WPM
+
+    </div>
+
+</div>
+
+<hr>
+
+<div class="toolbar">
+
+    <div class="stats">
+
+        <div>
+            <span class="stat-title">WPM</span>
+            <span id="wpm">0</span>
+        </div>
+
+        <div>
+            <span class="stat-title">Accuracy</span>
+            <span id="accuracy">100%</span>
+        </div>
+
+        <div>
+            <span class="stat-title">Time</span>
+            <span id="timer">0</span>
+        </div>
+
+    </div>
+
+    <div class="options">
+
+        <div class="difficulty">
+
+            <strong>Difficulty :</strong>
+
+            <label>
+                <input type="radio" name="difficulty" value="easy" checked>
+                Easy
+            </label>
+
+            <label>
+                <input type="radio" name="difficulty" value="medium">
+                Medium
+            </label>
+
+            <label>
+                <input type="radio" name="difficulty" value="hard">
+                Hard
+            </label>
+
+        </div>
+
+        <div class="mode">
+
+            <strong>Mode :</strong>
+
+            <label>
+                <input type="radio" name="mode" value="passage" checked>
+                Passage
+            </label>
+
+            <label>
+                <input type="radio" name="mode" value="timer">
+                Timer (60s)
+            </label>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr>
+    <!-- This div will contain ALL character spans -->
+    <div id="paragraph"></div>
+    <hr>
+    <button class="start-btn" id="start-btn-id" onclick="starttyping(false)">Start &#9654;</button>
+    
+    <div id="result-box" style="display:none;">
+
+    <h2>🎉 Test Complete</h2>
+
+    <p>WPM :
+        <span id="result-wpm"></span>
+    </p>
+
+    <p>Accuracy :
+        <span id="result-accuracy"></span>
+    </p>
+
+    <p>Correct :
+        <span id="result-correct"></span>
+    </p>
+
+    <p>Incorrect :
+        <span id="result-wrong"></span>
+    </p>
+
+    <h3 id="message"></h3>
+
+    </div>
+
+    <div id="cursor"></div>
+
+    <!-- Hidden input that receives keyboard typing -->
+    <input
+        type="text"
+        id="typingInput"
+        autocomplete="off"
+        spellcheck="false">
+
+        <footer class="attribution">
+    <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+            Frontend Mentor
+        </a>
+        <span>|</span>
+        Coded by <strong>Samir Bastola</strong>
+    </p>
+</footer>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
